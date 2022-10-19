@@ -1,0 +1,190 @@
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+@font-face {
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/assistant/v16/2sDcZGJYnIjSi6H75xkzamW5Kb8VZBHR.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+h2{
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'Assistant';
+}
+
+p{
+    font-family: 'Assistant';
+    font-style: normal;
+    font-weight: normal;
+
+}
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#video{
+    display: none;
+}
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+.btn-video {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+.video-wrapper{
+    display: block;
+}
+/** footer **/
+
+.footer {
+     background: #252525;
+     padding-top: 90px;
+     text-align: center;
+     font-family: 'Roboto', sans-serif;
+}
+
+ul.location_icon {
+     text-align: center;
+}
+
+ul.location_icon li {
+     display: inline-block;
+     font-size: 17px;
+     line-height: 20px;
+     color: #fff;
+     text-align: center;
+     padding: 0 40px;
+}
+
+ul.location_icon li a {
+     font-size: 40px;
+     color: #fff;
+     line-height: 30px;
+     display: block;
+}
+
+.copyright {
+     margin-top: 80px;
+     padding-bottom: 20px;
+     background: #fbfdfd;
+}
+
+.copyright p {
+     color: #292929;
+     font-size: 18px;
+     line-height: 22px;
+     text-align: center;
+     padding-top: 25px;
+     font-weight: normal;
+}
+
+.copyright a {
+     color: #292929;
+}
+
+.copyright a:hover {
+     color: #03cafc;
+}
+
+
+/** end footer **/
+
+
+/** inner page css **/
+
+.position_head .header {
+     position: inherit;
+     background: #03cafc;
+}
+
+.position_head .glasses,
+.shop {
+     margin-bottom: 90px;
+}
+
+    table, th, td {
+        border: 1px solid black;
+    }

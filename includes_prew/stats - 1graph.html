@@ -1,0 +1,370 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../bootstrap/assets/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+	<link href="../style/style.css" rel="stylesheet" /><meta name="generator" content="Hugo 0.98.0">
+	<title>דני אבדיה - על דני</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light sticky-top sticky-top">
+<div class="container-fluid">
+<p dir="rtl"><a class="navbar-brand" href="#"><img class="d-inline-block align-top" height="30" loading="lazy" src="../images/ball.svg" style="filter:  grayscale(100%) brightness(200%);" width="38" /> </a><button aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"></button></p>
+
+<div class="navbar-collapse collapse show" dir="rtl" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	<li class="nav-item"><a aria-current="page" class="nav-link" href="../index.html">בית</a></li>
+	<li class="nav-item"><a class="nav-link" href="../includes/dani.html">על דני</a></li>
+	<li class="nav-item"><a class="nav-link" href="../includes/games.html">משחקים</a></li>
+	<li class="nav-item"><a class="nav-link active" href="../includes/stats.html">סטטיסטיקות</a></li>
+	<li class="nav-item"><a class="nav-link " href="../includes/donations.html">תרומות</a></li>
+	<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="navbarDropdown" role="button"> מקורות נוספים </a>
+	<ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+		<li><a class="dropdown-item" href="https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%99_%D7%90%D7%91%D7%93%D7%99%D7%94" target="_blank">ויקיפדיה</a></li>
+		<li><a class="dropdown-item" href="https://www.sport5.co.il/Tags/%D7%93%D7%A0%D7%99_%D7%90%D7%91%D7%93%D7%99%D7%94" target="_blank">חדשות</a></li>
+		<li>
+		<hr class="dropdown-divider" /></li>
+		<li><a class="dropdown-item" href="https://www.youtube.com/results?search_query=%D7%93%D7%A0%D7%99+%D7%90%D7%91%D7%93%D7%99%D7%94" target="_blank">סרטונים ב Youtube</a></li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+</nav>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<main>
+<p dir="rtl"></p>
+</main>
+
+<p dir="rtl"></p>
+</body>
+
+
+
+
+
+
+
+
+<link href="../dashboard/dashboard.rtl.css" rel="stylesheet" />
+<div class="container-fluid" dir="rtl">
+<div class="row">
+<nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="sidebarMenu">
+<div class="position-sticky pt-3">
+
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase"></h6>
+</div>
+</nav>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+<span style="font-size: 32px;"><h2><b>נתוני משחק של דני לעונת 2021</b></h2></span>
+<div class="btn-toolbar mb-2 mb-md-0">
+
+</div>
+</div>
+<div class="table-responsive"><span style="font-size: 24px;"><b>סטטיסטיקה לפי משחק</b></span>
+
+<!--פניה טובה לאתר הנבא-->	
+<!--
+<script>
+$(document).ready(function(){
+
+var username="igorsan";
+var password="12Artisan#$";
+$.ajax({
+  type: "GET",
+  url: "https://api-nba-v1.p.rapidapi.com/players/statistics?id=2564&season=2021",
+  dataType: 'json',
+  headers: {
+    "X-RapidAPI-Key": "56b6cd043cmsh6cc5be7ec564572p16a5f8jsn55cb57a8e666",
+    "X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
+    "Authorization": "Basic aWdvcnNhbjoxMkFydGlzYW4jJA=="
+  },
+  success: function (result){
+	
+  
+  var myObj = JSON.stringify(result);
+document.getElementById("demo").innerHTML = myObj.name;
+  }
+});
+});
+  
+</script>
+-->
+
+<!--   הדפיס למסך
+<pre id="demo"></pre>
+<script>
+    $(document).ready(function(){
+        $.getJSON("2021result.json", function(data){
+			document.getElementById("demo").innerHTML = JSON.stringify(data);
+			console.log(data);
+        }).fail(function(){
+            console.log("An error has occurred.");
+        });
+		
+    });
+    </script> 
+-->
+
+
+
+
+<pre id="demo"></pre>
+<p><canvas class="my-4 w-100" height="380" id="myChart" width="900"></canvas></p>
+<pre id="myChart"></pre>
+<script>
+//const newarrey1;
+//var minutes=0;
+//var secondes=0;
+var points=[];
+var data={};
+function parseTime(arg1){
+	newarrey1 = arg1.split(":");
+	minutes = parseInt(newarrey1[0])*60;
+	secondes = parseInt(newarrey1[1]);
+	return (minutes+secondes);
+}
+    $(document).ready(function(){
+	var username="igorsan";
+	var password="12Artisan#$";
+	
+	$.ajax({
+		async: false,
+  		type: "GET",
+  		url: "https://api-nba-v1.p.rapidapi.com/players/statistics?id=2564&season=2021",
+  		dataType: 'json',
+  		headers: {
+   		 "X-RapidAPI-Key": "56b6cd043cmsh6cc5be7ec564572p16a5f8jsn55cb57a8e666",
+    	"X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
+    	"Authorization": "Basic aWdvcnNhbjoxMkFydGlzYW4jJA=="
+ 	 },
+  	success: function (result){
+	data = result;
+	//   myObj = JSON.stringify(result);
+
+// document.getElementById("demo").innerHTML = myObj.name;
+  	}
+});
+
+
+
+       // $.getJSON(myObj, function(data){
+			var i=1;
+			var game_stat=
+		"<table id=t1>"+
+			"<tr>"+
+			"<th>משחק מספר   </th>"+	
+			"<th>נקודות   </th>"+ 
+			"<th>דקות   </th>"+  
+			"<th>ריבאונדים   </th>"+
+			"<th>אסיסטים   </th>"+
+			"<th>עבירות   </th>"+
+			"<th>חטיפות   </th>"+
+			"<th>חסימות   </th>"+
+			"<th>פלוס/מינוס   </th>"+
+			"</tr>"
+			
+				var t_game_points = 0;
+			    var t_game_time = 0;
+			    var t_game_rebaunds = 0;
+				var t_game_assists = 0;
+				var t_game_fauls = 0;
+				var t_game_steals = 0;
+				var t_game_blocks = 0;
+				var t_game_plusminus = 0;
+				var t_seconds=0;
+				var t_minutes=0;
+				var avgtime="";
+				
+
+
+
+			for (var game of data.response) 
+			{
+				 points[i]=game.points;
+				 t_game_points = t_game_points + game.points;
+			     t_game_time = t_game_time + parseTime(game.min);
+			     t_game_rebaunds = t_game_rebaunds + game.totReb;
+				 t_game_assists = t_game_assists + game.assists;
+				 t_game_fauls = t_game_fauls + game.pFouls;
+				 t_game_steals = t_game_steals + game.steals;
+				 t_game_blocks = t_game_blocks + game.blocks;
+				 t_game_plusminus = parseInt(t_game_plusminus) + parseInt(game.plusMinus);
+
+				game_stat+=" <tr><td>"+i+ "</td> <td>"+game.points+ "</td> <td>"+game.min+"</td>" +  "<td>"+game.totReb+"</td><td>"+game.assists+"</td><td>"+game.pFouls+"</td><td>"+game.steals+" </td><td>"+game.blocks+"</td><td>"+game.plusMinus+"</td></tr>"
+				i+=1
+
+				
+			}
+				 t_minutes=parseInt(t_game_time/60);
+				 t_game_points = t_game_points/i;
+				 //t_minutes= parseInt(t_game_minuts/60);
+				 t_seconds= parseInt(t_game_time%60);
+			     //t_minutes = (t_game_minuts/60) /i;
+				 avgtime=parseInt(t_minutes/i)+ ":" + parseInt(t_seconds/i);
+				 t_game_minuts=avgtime;
+			     t_game_rebaunds = t_game_rebaunds /i;
+				 t_game_assists = t_game_assists /i;
+				 t_game_fauls = t_game_fauls /i;
+				 t_game_steals = t_game_steals /i;
+				 t_game_blocks = t_game_blocks /i;
+				 t_game_plusminus = t_game_plusminus /i;
+
+
+
+			game_stat+="</table>";
+
+
+			game_stat+= "\n" + "ממוצע למשחק";
+			game_stat+= "\n" + "נקודות למשחק :  " + t_game_points;
+			game_stat+= "\n" + "דקות למשחק :  " + t_game_minuts;
+			game_stat+= "\n" + "ריבאונדים למשחק :  " + t_game_rebaunds;
+			game_stat+= "\n" + "אסיסטים למשחק :  " + t_game_assists;
+			game_stat+= "\n" + "עבירות למשחק :  " + t_game_fauls;
+			game_stat+= "\n" + "חטיפות למשחק :  " + t_game_steals;
+			game_stat+= "\n" + "חסימות למשחק :  " + t_game_blocks;
+			game_stat+= "\n" + "פלוס/מינוס למשחק :  " + t_game_plusminus;
+
+			document.getElementById("demo").innerHTML =game_stat ;
+			
+
+	
+
+
+			console.log(data);
+        })
+		// .fail(function(){
+        //     console.log("An error has occurred.");
+        // });
+		
+
+    // });
+    
+    
+	//console.log("points"+globalThis.points);
+	var label_x=[];
+		for(let j=0;j<85;j++){
+			label_x[j]=j+1;
+		}
+	'use strict'
+  
+	//feather.replace({ 'aria-hidden': 'true' })
+  
+	// Graphs
+	const ctx = document.getElementById('myChart')
+	
+	// eslint-disable-next-line no-unused-vars
+	const myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+		labels: 
+		label_x
+		,
+		datasets: [{
+		  data: 
+			points
+		  ,
+		  lineTension: 0,
+		  backgroundColor: 'transparent',
+		  borderColor: 'green',
+		  borderWidth: 4,
+		  pointBackgroundColor: 'green'
+		}]
+	  },
+	  options: {
+		
+            title: {
+                display: true,
+                text: 'נקודות למשחק'
+            }
+        ,
+		scales: {
+		  yAxes: [{
+			ticks: {
+			  beginAtZero: false
+			}
+		  }]
+		},
+		legend: {
+		  display: false
+		}
+	  }
+	})
+    </script> 
+
+<!-- <p><canvas class="my-4 w-100" height="380" id="myChart" width="900"></canvas></p>
+<p>
+	<pre id="mychart"></pre>
+	<script>
+	
+ (() => {
+	var label_x=[];
+		for(let j=0;j<85;j++){
+			label_x[j]=j+1;
+		}
+	'use strict'
+  
+	//feather.replace({ 'aria-hidden': 'true' })
+  
+	//Graphs
+	const ctx = document.getElementById('myChart')
+	//eslint-disable-next-line no-unused-vars
+	const myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+		labels: 
+		label_x
+		,
+		datasets: [{
+		  data: 
+		  label_x
+		  ,
+		  lineTension: 0,
+		  backgroundColor: 'transparent',
+		  borderColor: '#007bff',
+		  borderWidth: 4,
+		  pointBackgroundColor: '#007bff'
+		}]
+	  },
+	  options: {
+		scales: {
+		  yAxes: [{
+			ticks: {
+			  beginAtZero: false
+			}
+		  }]
+		},
+		legend: {
+		  display: false
+		}
+	  }
+	})
+  })()
+  
+  </script>
+</p> -->
+	
+
+
+
+<!--
+<p dir="rtl"><script src="../../Root/bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script></p>
+-->
+<footer class="text-muted py-1">
+<div class="container">
+<p class="float-end mb-1" dir="rtl"><a href="#">גלול למעלה</a></p>
+
+
+
+<p dir="rtl"><img class="float-end mb-2" height="120" src="../images/college.svg" width="120" /></p>
+</div>
+</footer>
+<!--
+<script src="../../Root/bootstrap/assets/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="../bootstrap/assets/dist/js/dashboard.js"></script></html>
+-->
